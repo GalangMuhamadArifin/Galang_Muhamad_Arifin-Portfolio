@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PORTFOLIO | Galang Muhamad Arifin — Visual Direction & Design</title>
+  
+  <!-- Google Fonts: Syncopate, Space Grotesk, Space Mono, & Plus Jakarta Sans (Galaxy Compass Theme) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            galaxy: ['"Space Grotesk"', 'sans-serif'],
+            cosmic: ['"Syncopate"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+            arcane: ['"Space Grotesk"', 'sans-serif'],
+            magical: ['"Syncopate"', '"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            cosmic: {
+              obsidian: '#0A0710',
+              midnight: '#0F0B18',
+              card: '#161022',
+              cardHover: '#1F1530',
+              border: '#281A3C',
+              purple: '#5B2A86',
+              brightPurple: '#8E4EC6',
+              crimson: '#8F1D33',
+              brightCrimson: '#B82845',
+              gold: '#C9A24B',
+              brightGold: '#E5C368',
+              paleGold: '#F3E5BC',
+              ivory: '#F7F2EA',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Smooth Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0710;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #231535;
+      border: 1px solid rgba(201, 162, 75, 0.3);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5B2A86;
+      box-shadow: 0 0 10px rgba(229, 195, 104, 0.4);
+    }
+
+    /* Refined, Professional Gold Metallic Text Glow (Not Overdone) */
+    .refined-gold-text {
+      background: linear-gradient(135deg, #FFF9EB 0%, #F3E5BC 25%, #E5C368 50%, #C9A24B 75%, #F3E5BC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 18px rgba(229, 195, 104, 0.35)) drop-shadow(0 8px 32px rgba(91, 42, 134, 0.25));
+    }
+
+    /* Professional Dark Glassmorphic Card with Subtle Edge Glow */
+    .cosmic-card {
+      background: radial-gradient(circle at top left, rgba(29, 19, 44, 0.82), rgba(15, 11, 24, 0.94));
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(201, 162, 75, 0.2);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 
+                  0 0 20px -8px rgba(91, 42, 134, 0.2);
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cosmic-card:hover {
+      border-color: rgba(229, 195, 104, 0.45);
+      box-shadow: 0 14px 38px -5px rgba(0, 0, 0, 0.9), 
+                  0 0 24px rgba(91, 42, 134, 0.3), 
+                  0 0 12px rgba(201, 162, 75, 0.15);
+      transform: translateY(-2.5px);
+    }
+
+    /* Subtle Elegant Glow Animations */
+    @keyframes softFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes slowCosmicSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes subtlePulse {
+      0%, 100% { opacity: 0.35; filter: drop-shadow(0 0 10px rgba(201, 162, 75, 0.25)); }
+      50% { opacity: 0.65; filter: drop-shadow(0 0 18px rgba(229, 195, 104, 0.45)); }
+    }
+    @keyframes gentleAura {
+      0%, 100% { opacity: 0.12; transform: scale(1); }
+      50% { opacity: 0.20; transform: scale(1.06); }
+    }
+
+    .animate-soft-float { animation: softFloat 6s ease-in-out infinite; }
+    .animate-slow-spin { animation: slowCosmicSpin 90s linear infinite; }
+    .animate-subtle-pulse { animation: subtlePulse 5s ease-in-out infinite; }
+    .animate-gentle-aura { animation: gentleAura 8s ease-in-out infinite; }
+
+    /* Elegant Metallic Action Button */
+    .cosmic-btn-primary {
+      background: linear-gradient(135deg, #8F1D33 0%, #5B2A86 50%, #C9A24B 100%);
+      border: 1px solid rgba(243, 229, 188, 0.45);
+      box-shadow: 0 4px 18px rgba(91, 42, 134, 0.35), 0 2px 8px rgba(143, 29, 51, 0.3);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cosmic-btn-primary:hover {
+      background: linear-gradient(135deg, #B82845 0%, #7637AE 50%, #E5C368 100%);
+      box-shadow: 0 6px 24px rgba(201, 162, 75, 0.4), 0 0 16px rgba(143, 29, 51, 0.4);
+      transform: translateY(-1.5px) scale(1.02);
+    }
+  </style>
+</head>
+<body class="bg-[#0A0710] text-[#F7F2EA] font-sans antialiased selection:bg-cosmic-crimson selection:text-cosmic-brightGold relative overflow-x-hidden">
+
+  <!-- ================= FIXED SUBTLE GALAXY AMBIENCE BACKDROP ================= -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-15">
+    <img 
+      src="assets/png/galaxy-bg.png" 
+      alt="Cosmic Galaxy Texture" 
+      class="w-full h-full object-cover object-center filter blur-[1px]" 
+    />
+    <div class="absolute inset-0 bg-[#0A0710]/75"></div>
+  </div>
+
+  <!-- ================= CONTROLLED AMBIENT BACKGROUND GLOW ================= -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <!-- Crimson Aura (Top-Left, Soft 14% Opacity) -->
+    <div class="absolute -top-32 -left-32 w-[650px] h-[650px] bg-[#8F1D33]/15 rounded-full blur-[150px] animate-gentle-aura"></div>
+    <!-- Royal Violet Aura (Top-Right, Soft 16% Opacity) -->
+    <div class="absolute top-1/4 -right-32 w-[700px] h-[700px] bg-[#5B2A86]/18 rounded-full blur-[160px] animate-gentle-aura" style="animation-delay: 2.5s;"></div>
+    <!-- Subtle Gold Core Halo (Center) -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#C9A24B]/10 rounded-full blur-[140px] animate-gentle-aura" style="animation-delay: 1.2s;"></div>
+    <!-- Midnight Deep Purple (Bottom) -->
+    <div class="absolute bottom-10 left-1/3 w-[600px] h-[600px] bg-[#5B2A86]/12 rounded-full blur-[170px]"></div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 cosmic-card border-b border-[#C9A24B]/20 bg-[#0A0710]/92 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Emblem with 3D Glass Astrolabe -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#8F1D33] via-[#5B2A86] to-[#C9A24B] p-[1.2px] shadow-md shadow-purple-950/60 group-hover:scale-105 transition-transform flex items-center justify-center">
+          <div class="w-full h-full bg-[#120C1D] rounded-[10px] flex items-center justify-center p-1 border border-[#C9A24B]/30">
+            <img src="assets/png/nav-emblem.png" alt="Arcana Crest" class="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(201,162,75,0.4)]" />
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-arcane font-bold tracking-wider text-cosmic-brightGold group-hover:text-white transition-colors text-sm">GALANG M. ARIFIN</span>
+          <span class="text-[10px] text-zinc-400 -mt-0.5 tracking-widest uppercase font-medium flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B] animate-pulse"></span>
+            <span data-i18n="nav.role">Visual Direction & Design</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-arcane tracking-[0.12em] uppercase text-zinc-300">
+        <a href="#about" class="hover:text-cosmic-brightGold transition-colors" data-i18n="nav.about">Tentang Saya</a>
+        <a href="#gallery" class="hover:text-cosmic-brightGold transition-colors" data-i18n="nav.works">Karya & Event</a>
+        <a href="#skills" class="hover:text-cosmic-brightGold transition-colors" data-i18n="nav.skills">Kemampuan</a>
+        <a href="#experience" class="hover:text-cosmic-brightGold transition-colors" data-i18n="nav.journey">Jejak Karir</a>
+        <a href="#contact" class="hover:text-cosmic-brightGold transition-colors" data-i18n="nav.contact">Kontak</a>
+      </nav>
+
+      <!-- Language Switcher & Elegant CTA -->
+      <div class="flex items-center gap-4">
+        <!-- Bilingual Toggle Button (ID / EN) -->
+        <div class="flex items-center bg-[#150F22] p-1 rounded-full border border-[#C9A24B]/30 text-xs font-arcane shadow-inner">
+          <button id="langIdBtn" class="px-3 py-1 rounded-full font-bold transition-all text-[#E5C368] bg-[#C9A24B]/20 border border-[#C9A24B]/40 shadow-[0_0_8px_rgba(201,162,75,0.3)]" onclick="setLanguage('id')">
+            ID
+          </button>
+          <button id="langEnBtn" class="px-3 py-1 rounded-full font-medium transition-all text-zinc-400 hover:text-white" onclick="setLanguage('en')">
+            EN
+          </button>
+        </div>
+
+        <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 rounded-full cosmic-btn-primary text-white font-arcane font-bold text-xs tracking-wider uppercase">
+          <span data-i18n="nav.cta">Hubungi</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-cosmic-brightGold hover:text-white" aria-label="Buka Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden cosmic-card border-t border-[#C9A24B]/20 px-6 py-5 flex flex-col gap-4 text-xs font-arcane tracking-wider uppercase">
+      <a href="#about" class="text-zinc-300 hover:text-cosmic-brightGold py-1" data-i18n="nav.about">Tentang Saya</a>
+      <a href="#gallery" class="text-zinc-300 hover:text-cosmic-brightGold py-1" data-i18n="nav.works">Karya & Event</a>
+      <a href="#skills" class="text-zinc-300 hover:text-cosmic-brightGold py-1" data-i18n="nav.skills">Kemampuan</a>
+      <a href="#experience" class="text-zinc-300 hover:text-cosmic-brightGold py-1" data-i18n="nav.journey">Jejak Karir</a>
+      <a href="#contact" class="text-cosmic-brightGold hover:text-white py-1 font-bold" data-i18n="nav.contact">Kontak</a>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-20">
+
+    <!-- ================= HERO SECTION (GALAXY COMPASS BACKGROUND & 3D ASTROLABE) ================= -->
+    <section id="hero" class="relative min-h-[96vh] flex items-center justify-center px-4 sm:px-6 py-14 overflow-hidden">
+      
+      <!-- Master Background: Kompas Kosmik di Tengah Galaksi with Vignette -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img 
+          src="assets/png/galaxy-bg.png" 
+          alt="Kompas Kosmik di Tengah Galaksi" 
+          class="w-full h-full object-cover object-center opacity-65 filter contrast-110 brightness-95 scale-105"
+        />
+        <!-- Top and Bottom Blending Gradients to Obsidian Black #0A0710 -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0A0710]/85 via-transparent to-[#0A0710]"></div>
+        <!-- Optical Radial Vignette for Center Contrast -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(10,7,16,0.35)_0%,_rgba(10,7,16,0.78)_55%,_#0A0710_95%)]"></div>
+      </div>
+      
+      <!-- Subtle Floating Celestial Elements (Curated, Tasteful & Balanced) -->
+      
+      <!-- 1. Celestial Orb (Bottom-Left) -->
+      <div class="absolute bottom-16 left-6 sm:left-24 w-16 sm:w-24 pointer-events-none opacity-60 animate-soft-float z-0 filter drop-shadow-[0_0_12px_rgba(91,42,134,0.45)]">
+        <img src="assets/png/celestial-orb.png" alt="Celestial Orb" class="w-full h-full object-contain" />
+      </div>
+
+      <!-- 2. Celestial Star (Top-Right) -->
+      <div class="absolute top-12 right-6 sm:right-28 w-14 sm:w-20 pointer-events-none opacity-50 animate-soft-float z-0 filter drop-shadow-[0_0_10px_rgba(201,162,75,0.4)]" style="animation-delay: 2s;">
+        <img src="assets/png/celestial-star.png" alt="Celestial Star" class="w-full h-full object-contain" />
+      </div>
+
+      <!-- Centerpiece Container -->
+      <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+        
+        <!-- Celestial Coordinate & Astrolabe Badge (Space Mono) -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full cosmic-card border border-[#C9A24B]/40 text-[11px] sm:text-xs font-mono text-cosmic-brightGold tracking-widest mb-3 shadow-[0_0_15px_rgba(201,162,75,0.2)]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E5C368] animate-ping"></span>
+          <span data-i18n="hero.tagline_top">✦ CELESTIAL VISUAL ARCHIVE // GALAXY ASTROLABE ✦</span>
+        </div>
+
+        <!-- THE MAIN TITLE: "PORTFOLIO" (Syncopate Cosmic Wide Typography) -->
+        <h1 class="font-cosmic text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.16em] sm:tracking-[0.22em] font-extrabold refined-gold-text uppercase my-3 select-none text-center">
+          PORTFOLIO
+        </h1>
+
+        <!-- Designer Identity Ribbon (Space Grotesk) -->
+        <div class="font-galaxy tracking-[0.28em] text-xs sm:text-sm uppercase text-zinc-300 mt-1 mb-4 font-semibold flex items-center gap-3">
+          <span class="w-10 h-[1px] bg-gradient-to-r from-transparent to-[#C9A24B]/70"></span>
+          <span class="text-cosmic-brightGold drop-shadow-[0_0_6px_rgba(201,162,75,0.4)]">Galang Muhamad Arifin</span>
+          <span class="w-10 h-[1px] bg-gradient-to-l from-transparent to-[#C9A24B]/70"></span>
+        </div>
+
+        <!-- ================= LAYERED 3D ASTROLABE CENTERPIECE ================= -->
+        <div class="relative w-64 sm:w-72 h-64 sm:h-72 my-3 flex items-center justify-center animate-soft-float">
+          <!-- Background Cosmic Portal Ring (Slow Spin, Subtle Glow) -->
+          <img 
+            src="assets/png/hero-portal.png" 
+            alt="Cosmic Portal" 
+            class="absolute inset-0 w-full h-full object-contain opacity-45 animate-slow-spin filter drop-shadow-[0_0_18px_rgba(91,42,134,0.45)] pointer-events-none select-none" 
+          />
+          
+          <!-- Foreground 3D Cosmic Astrolabe Compass -->
+          <img 
+            src="assets/png/hero-compass.png" 
+            alt="3D Cosmic Compass" 
+            class="relative z-10 w-44 sm:w-52 h-auto object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.85)] drop-shadow-[0_0_15px_rgba(201,162,75,0.35)] select-none pointer-events-none" 
+          />
+        </div>
+
+        <!-- Description Paragraph (Professional & Clear) -->
+        <p class="text-zinc-200 text-sm sm:text-base max-w-2xl font-normal leading-relaxed mt-4 mb-8" data-i18n="hero.desc">
+          Lulusan Desain Komunikasi Visual Universitas Budi Luhur (IPK 3.65) dengan pengalaman 2,5 tahun di Laboratorium DKV. Menggabungkan seni grafis presisi, key visual berskala besar, serta alur kerja AI visual generatif.
+        </p>
+
+        <!-- Refined Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#gallery" class="px-8 py-3.5 rounded-full cosmic-btn-primary text-white font-arcane font-bold text-xs tracking-wider uppercase flex items-center gap-2.5">
+            <i data-lucide="compass" class="w-4 h-4 text-cosmic-brightGold"></i>
+            <span data-i18n="hero.cta_explore">Buka Arsip Karya</span>
+          </a>
+          <a href="https://wa.me/6285774198245" target="_blank" class="px-8 py-3.5 rounded-full cosmic-card text-cosmic-brightGold hover:text-white border border-[#C9A24B]/35 font-arcane font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2 hover:scale-105">
+            <i data-lucide="message-circle" class="w-4 h-4 text-[#8F1D33]"></i>
+            <span>WhatsApp (+62 857 7419 8245)</span>
+          </a>
+        </div>
+
+        <!-- Professional Stats Matrix -->
+        <div class="grid grid-cols-3 gap-6 sm:gap-12 mt-10 pt-8 border-t border-[#C9A24B]/20 w-full max-w-xl">
+          <div class="text-center">
+            <div class="text-2xl sm:text-3xl font-extrabold font-arcane refined-gold-text">3.65</div>
+            <div class="text-[10px] text-zinc-400 mt-1 uppercase tracking-widest font-arcane" data-i18n="stats.gpa">IPK Kelulusan DKV</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl sm:text-3xl font-extrabold font-arcane refined-gold-text">2.5+</div>
+            <div class="text-[10px] text-zinc-400 mt-1 uppercase tracking-widest font-arcane" data-i18n="stats.lab">Tahun Lab DKV</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl sm:text-3xl font-extrabold font-arcane refined-gold-text">10+</div>
+            <div class="text-[10px] text-zinc-400 mt-1 uppercase tracking-widest font-arcane" data-i18n="stats.events">Event Besar</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION DIVIDER 1 (3D COSMIC DIVIDER PNG) ================= -->
+    <div class="w-full max-w-3xl mx-auto px-6 my-4 opacity-75 pointer-events-none filter drop-shadow-[0_0_10px_rgba(201,162,75,0.4)]">
+      <img src="assets/png/cosmic-divider.png" alt="Cosmic Divider" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="py-20 px-6 relative">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+          
+          <!-- Profile Frame with 3D Filigree Accent -->
+          <div class="md:col-span-5 relative group">
+            <div class="absolute -inset-2 bg-gradient-to-tr from-[#8F1D33]/30 via-[#5B2A86]/30 to-[#C9A24B]/30 rounded-3xl blur-2xl group-hover:blur-3xl transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden cosmic-card border border-[#C9A24B]/40 aspect-[4/5] shadow-2xl">
+              <img 
+                src="assets/img/profile.png" 
+                alt="Galang Muhamad Arifin" 
+                class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105"
+              />
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl cosmic-card border border-[#C9A24B]/30 text-xs">
+                <p class="font-arcane font-bold text-cosmic-brightGold text-sm">Galang Muhamad Arifin</p>
+                <p class="text-zinc-300 text-[11px]" data-i18n="about.profile_title">Visual Direction & AI Content Specialist</p>
+                <p class="text-[#E5C368] text-[10px] mt-1 flex items-center gap-1 font-medium">
+                  <i data-lucide="map-pin" class="w-3 h-3 text-[#8F1D33]"></i> Jakarta Selatan, Indonesia
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description & Pillars with Curated 3D Assets -->
+          <div class="md:col-span-7 flex flex-col gap-6">
+            <div class="inline-flex items-center gap-2 text-xs font-arcane font-bold tracking-widest uppercase text-cosmic-brightGold">
+              <span class="w-2 h-2 rounded-full bg-[#C9A24B] shadow-[0_0_6px_#C9A24B]"></span>
+              <span data-i18n="about.badge">Tentang Sang Desainer</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-arcane font-bold text-white tracking-tight leading-snug">
+              <span data-i18n="about.quote">Meramu ide mentah menjadi mahakarya visual yang memikat & bermakna.</span>
+            </h2>
+
+            <p class="text-zinc-300 leading-relaxed text-sm sm:text-base" data-i18n="about.bio_p1">
+              Saya adalah lulusan baru (Fresh Graduate) S1 Desain Komunikasi Visual dari <strong>Universitas Budi Luhur</strong> dengan IPK <strong>3.65</strong>. Selama 2,5 tahun di <strong>Laboratorium DKV</strong> kampus, saya mengarahkan perancangan key visual acara, flyer, backdrop panggung, hingga materi pameran skala besar.
+            </p>
+
+            <p class="text-zinc-400 leading-relaxed text-sm" data-i18n="about.bio_p2">
+              Menguasai <strong>Adobe Photoshop</strong> & <strong>Illustrator</strong> dengan tambahan keahlian fotografi acara dan video editing, serta aktif merancang alur kerja <strong>AI Workflows</strong> untuk mentransformasikan prompt menjadi aset visual yang konsisten dan siap pakai.
+            </p>
+
+            <!-- 3 Pillars with 3D PNG Icons -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+              <div class="p-4 rounded-xl cosmic-card border border-[#8F1D33]/30 group">
+                <div class="w-10 h-10 mb-2.5 filter drop-shadow-[0_0_8px_rgba(143,29,51,0.5)] group-hover:scale-105 transition-transform">
+                  <img src="assets/png/pillar-kv.png" alt="Key Visual Icon" class="w-full h-full object-contain" />
+                </div>
+                <div class="text-[#B82845] font-arcane font-bold text-xs mb-1">Key Visual</div>
+                <p class="text-[11px] text-zinc-400" data-i18n="about.pillar_kv">Backdrop pameran, identitas event, & instalasi panggung.</p>
+              </div>
+
+              <div class="p-4 rounded-xl cosmic-card border border-[#5B2A86]/30 group">
+                <div class="w-10 h-10 mb-2.5 filter drop-shadow-[0_0_8px_rgba(91,42,134,0.5)] group-hover:scale-105 transition-transform">
+                  <img src="assets/png/pillar-sm.png" alt="Social Media Icon" class="w-full h-full object-contain" />
+                </div>
+                <div class="text-[#8E4EC6] font-arcane font-bold text-xs mb-1">Social Media</div>
+                <p class="text-[11px] text-zinc-400" data-i18n="about.pillar_sm">Grid sistematis, carousel feed, & template Instagram.</p>
+              </div>
+
+              <div class="p-4 rounded-xl cosmic-card border border-[#C9A24B]/30 group">
+                <div class="w-10 h-10 mb-2.5 filter drop-shadow-[0_0_8px_rgba(201,162,75,0.5)] group-hover:scale-105 transition-transform">
+                  <img src="assets/png/pillar-ai.png" alt="AI Icon" class="w-full h-full object-contain" />
+                </div>
+                <div class="text-cosmic-brightGold font-arcane font-bold text-xs mb-1">AI Workflows</div>
+                <p class="text-[11px] text-zinc-400" data-i18n="about.pillar_ai">Konsistensi visual generatif & efisiensi produksi.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION DIVIDER 2 ================= -->
+    <div class="w-full max-w-3xl mx-auto px-6 my-4 opacity-75 pointer-events-none filter drop-shadow-[0_0_10px_rgba(201,162,75,0.4)]">
+      <img src="assets/png/cosmic-divider.png" alt="Cosmic Divider" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- ================= GALLERY SECTION (MULTI-PHOTO EVENT ALBUMS) ================= -->
+    <section id="gallery" class="py-20 px-6 bg-[#0E0916]/80">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Header & Category Filters -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-arcane font-bold uppercase tracking-widest text-cosmic-brightGold mb-2">
+              <span class="w-2 h-2 rounded-full bg-[#C9A24B] shadow-[0_0_6px_#C9A24B]"></span>
+              <span data-i18n="gallery.badge">Arsip Karya Pilihan</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-arcane font-bold text-white tracking-tight" data-i18n="gallery.title">Galeri Event & Karya</h2>
+            <p class="text-zinc-400 mt-2 text-sm max-w-lg" data-i18n="gallery.subtitle">
+              Setiap event dapat memuat banyak foto. Klik kartu event untuk membuka album foto lengkap dan detail konsepnya.
+            </p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="flex flex-wrap gap-2 p-1.5 rounded-2xl cosmic-card border border-[#C9A24B]/30 text-xs font-arcane" id="filterTabs">
+            <button class="filter-btn active px-4 py-2 rounded-xl transition-all cosmic-btn-primary text-white font-bold" data-filter="all" data-i18n="filter.all">Semua</button>
+            <button class="filter-btn px-4 py-2 rounded-xl text-zinc-400 hover:text-cosmic-brightGold transition-all" data-filter="keyvisual" data-i18n="filter.keyvisual">Key Visual & Event</button>
+            <button class="filter-btn px-4 py-2 rounded-xl text-zinc-400 hover:text-cosmic-brightGold transition-all" data-filter="socialmedia" data-i18n="filter.socialmedia">Social Media & Feed</button>
+            <button class="filter-btn px-4 py-2 rounded-xl text-zinc-400 hover:text-cosmic-brightGold transition-all" data-filter="campaign" data-i18n="filter.campaign">Kampanye & Brand</button>
+          </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
+          
+          <!-- Event 1: EUFORATIVE -->
+          <div class="portfolio-item group cursor-pointer relative rounded-2xl overflow-hidden cosmic-card border border-[#C9A24B]/30 hover:border-[#E5C368]"
+               data-category="keyvisual"
+               data-title="EUFORATIVE — Pameran Tugas Akhir DKV"
+               data-title-en="EUFORATIVE — Final Project Exhibition DKV"
+               data-year="2024"
+               data-cat-label="Key Visual & Exhibition"
+               data-desc="Perancangan identitas visual dan key visual untuk pameran tugas akhir mahasiswa DKV Universitas Budi Luhur bertajuk EUFORATIVE. Diterapkan pada skala besar meliputi instalasi backdrop pameran, standing banner, katalog pameran, serta materi promosi digital."
+               data-desc-en="Visual identity and key visual design for the DKV Universitas Budi Luhur Final Project Exhibition entitled EUFORATIVE. Applied at large scale including exhibition backdrop installation, standing banners, exhibition catalogs, and digital promotion."
+               data-tools="Adobe Illustrator, Photoshop"
+               data-photos='["assets/img/page_05.jpg", "assets/img/page_06.jpg", "assets/img/page_07.jpg"]'>
+            <div class="aspect-[16/10] overflow-hidden bg-black relative">
+              <img src="assets/img/page_05.jpg" alt="EUFORATIVE" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+              <span class="absolute top-4 left-4 text-[10px] font-arcane font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#8F1D33]/85 text-[#F7F2EA] border border-[#C9A24B]/40 shadow-sm">Key Visual</span>
+              <span class="absolute top-4 right-4 text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-black/70 text-cosmic-brightGold border border-[#C9A24B]/30 flex items-center gap-1">
+                <i data-lucide="images" class="w-3 h-3 text-[#C9A24B]"></i> 3 Foto
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-arcane font-bold text-cosmic-brightGold text-base group-hover:text-white transition-colors">EUFORATIVE — Pameran Tugas Akhir</h3>
+              <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2" data-i18n-card="euforative_short">Key visual pameran tahunan DKV: backdrop instalasi, banner, dan promosi.</p>
+              <div class="mt-4 flex items-center justify-between text-xs text-zinc-500 border-t border-[#C9A24B]/15 pt-3">
+                <span class="text-[#8E4EC6] font-arcane">Universitas Budi Luhur</span>
+                <span class="text-cosmic-brightGold flex items-center gap-1 font-semibold group-hover:translate-x-1 transition-transform">
+                  <span data-i18n="gallery.open_album">Buka Album</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2: WORK, THRIVE, FUNKY -->
+          <div class="portfolio-item group cursor-pointer relative rounded-2xl overflow-hidden cosmic-card border border-[#C9A24B]/30 hover:border-[#E5C368]"
+               data-category="socialmedia"
+               data-title="Tema Instagram DKV: WORK, THRIVE, FUNKY"
+               data-title-en="DKV Instagram Annual Theme: WORK, THRIVE, FUNKY"
+               data-year="2024 - 2025"
+               data-cat-label="Key Visual & Social Media System"
+               data-desc="Tema visual tahunan untuk akun Instagram DKV Universitas Budi Luhur yang dikembangkan dari set kata kunci tematik menjadi konsep visual menyeluruh. Menggunakan tipografi tegas (bold typography) dan palet warna kontras ceria (#F0703C, #F0C060, #5468B4, #6084E8) untuk merefleksikan semangat muda kreatif."
+               data-desc-en="Annual visual theme for DKV Universitas Budi Luhur's Instagram, developed from thematic keywords into a complete visual concept. Features bold typography and energetic vibrant color blocking to reflect creative youth identity."
+               data-tools="Adobe Illustrator, Photoshop"
+               data-photos='["assets/img/page_08.jpg", "assets/img/page_09.jpg", "assets/img/page_10.jpg"]'>
+            <div class="aspect-[16/10] overflow-hidden bg-black relative">
+              <img src="assets/img/page_08.jpg" alt="Instagram DKV" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+              <span class="absolute top-4 left-4 text-[10px] font-arcane font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#5B2A86]/85 text-[#F7F2EA] border border-[#C9A24B]/40 shadow-sm">Social Media</span>
+              <span class="absolute top-4 right-4 text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-black/70 text-cosmic-brightGold border border-[#C9A24B]/30 flex items-center gap-1">
+                <i data-lucide="images" class="w-3 h-3 text-[#5B2A86]"></i> 3 Foto
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-arcane font-bold text-cosmic-brightGold text-base group-hover:text-white transition-colors">WORK, THRIVE, FUNKY — Instagram DKV</h3>
+              <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2" data-i18n-card="wtf_short">Konsep visual tahunan media sosial DKV dengan palet dinamis & vibrant.</p>
+              <div class="mt-4 flex items-center justify-between text-xs text-zinc-500 border-t border-[#C9A24B]/15 pt-3">
+                <span class="text-[#8E4EC6] font-arcane">DKV Lab UBL</span>
+                <span class="text-cosmic-brightGold flex items-center gap-1 font-semibold group-hover:translate-x-1 transition-transform">
+                  <span data-i18n="gallery.open_album">Buka Album</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3: Template Instagram -->
+          <div class="portfolio-item group cursor-pointer relative rounded-2xl overflow-hidden cosmic-card border border-[#C9A24B]/30 hover:border-[#E5C368]"
+               data-category="socialmedia"
+               data-title="Sistem Template Instagram & Feed Kampus"
+               data-title-en="Instagram Template System & Campus Feed"
+               data-year="2024 - 2025"
+               data-cat-label="Instagram Template System"
+               data-desc="Perancangan sistem template feed, multi-slide carousel, dan story Instagram yang terstruktur untuk menampung konten publikasi harian, pengumuman perkuliahan, dan showcase karya mahasiswa DKV."
+               data-desc-en="Design of a structured Instagram feed, multi-slide carousel, and stories template system to house regular academic content, campus announcements, and student design showcases."
+               data-tools="Adobe Illustrator, Photoshop"
+               data-photos='["assets/img/page_11.jpg", "assets/img/page_12.jpg", "assets/img/page_13.jpg"]'>
+            <div class="aspect-[16/10] overflow-hidden bg-black relative">
+              <img src="assets/img/page_11.jpg" alt="Template Instagram" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+              <span class="absolute top-4 left-4 text-[10px] font-arcane font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#5B2A86]/85 text-[#F7F2EA] border border-[#C9A24B]/40 shadow-sm">Editorial</span>
+              <span class="absolute top-4 right-4 text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-black/70 text-cosmic-brightGold border border-[#C9A24B]/30 flex items-center gap-1">
+                <i data-lucide="images" class="w-3 h-3 text-[#C9A24B]"></i> 3 Foto
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-arcane font-bold text-cosmic-brightGold text-base group-hover:text-white transition-colors">Template Instagram & Grid System</h3>
+              <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2" data-i18n-card="template_short">Sistem grid dan tata letak modular untuk publikasi konten media sosial.</p>
+              <div class="mt-4 flex items-center justify-between text-xs text-zinc-500 border-t border-[#C9A24B]/15 pt-3">
+                <span class="text-zinc-400 font-arcane">Design System</span>
+                <span class="text-cosmic-brightGold flex items-center gap-1 font-semibold group-hover:translate-x-1 transition-transform">
+                  <span data-i18n="gallery.open_album">Buka Album</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4: World Clean Up Day -->
+          <div class="portfolio-item group cursor-pointer relative rounded-2xl overflow-hidden cosmic-card border border-[#C9A24B]/30 hover:border-[#E5C368]"
+               data-category="campaign"
+               data-title="World Clean Up Day — Bank Sampah UBL"
+               data-title-en="World Clean Up Day — UBL Waste Bank"
+               data-year="2025"
+               data-cat-label="Campaign & Poster Identity"
+               data-desc="Desain key visual kampanye World Clean Up Day untuk Bank Sampah Universitas Budi Luhur. Tipografi kustom berukuran masif dimanfaatkan sebagai kontainer ilustrasi elemen lingkungan hidup, dipadukan palet warna hijau segar (#08676F, #D1B428, #F9F9F9) yang mencerminkan komitmen pelestarian alam."
+               data-desc-en="Key visual campaign design for Bank Sampah Universitas Budi Luhur's World Clean Up Day. Large custom typography functions as containers for eco-iconography with a fresh sustainable green palette."
+               data-tools="Adobe Illustrator, Custom Typography"
+               data-photos='["assets/img/page_14.jpg", "assets/img/page_15.jpg"]'>
+            <div class="aspect-[16/10] overflow-hidden bg-black relative">
+              <img src="assets/img/page_14.jpg" alt="World Clean Up Day" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+              <span class="absolute top-4 left-4 text-[10px] font-arcane font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#8F1D33]/85 text-[#F7F2EA] border border-[#C9A24B]/40 shadow-sm">Campaign</span>
+              <span class="absolute top-4 right-4 text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-black/70 text-cosmic-brightGold border border-[#C9A24B]/30 flex items-center gap-1">
+                <i data-lucide="images" class="w-3 h-3 text-[#8F1D33]"></i> 2 Foto
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-arcane font-bold text-cosmic-brightGold text-base group-hover:text-white transition-colors">World Clean Up Day Campaign</h3>
+              <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2" data-i18n-card="cleanup_short">Eksplorasi tipografi ilustratif untuk kampanye lingkungan berkelanjutan.</p>
+              <div class="mt-4 flex items-center justify-between text-xs text-zinc-500 border-t border-[#C9A24B]/15 pt-3">
+                <span class="text-[#8E4EC6] font-arcane">Bank Sampah UBL</span>
+                <span class="text-cosmic-brightGold flex items-center gap-1 font-semibold group-hover:translate-x-1 transition-transform">
+                  <span data-i18n="gallery.open_album">Buka Album</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5: KKN Tematik NTT -->
+          <div class="portfolio-item group cursor-pointer relative rounded-2xl overflow-hidden cosmic-card border border-[#C9A24B]/30 hover:border-[#E5C368]"
+               data-category="campaign"
+               data-title="KKN Tematik Merajut Nusantara III — NTT"
+               data-title-en="Merajut Nusantara III NTT Thematic Program"
+               data-year="2025"
+               data-cat-label="Brand & Cultural Identity"
+               data-desc="Sebagai Leader Desain, memegang tanggung jawab penuh atas identitas visual program KKN Tematik di Nusa Tenggara Timur. Mengembangkan key visual, poster kegiatan, formulir pendaftaran, dan atribut lapangan dengan memadukan ragam hias tenun ikat nusantara serta lanskap pesisir (#E7CCAB, #A05234, #2F4359)."
+               data-desc-en="As Design Leader, led the complete visual identity for the community development program in East Nusa Tenggara (NTT). Integrated local ikat weave motifs and coastal landscape with clear informative layout."
+               data-tools="Adobe Illustrator, Photoshop"
+               data-photos='["assets/img/page_16.jpg", "assets/img/page_17.jpg"]'>
+            <div class="aspect-[16/10] overflow-hidden bg-black relative">
+              <img src="assets/img/page_16.jpg" alt="KKN NTT" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+              <span class="absolute top-4 left-4 text-[10px] font-arcane font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#8F1D33]/85 text-[#F7F2EA] border border-[#C9A24B]/40 shadow-sm">Leader Desain</span>
+              <span class="absolute top-4 right-4 text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-black/70 text-cosmic-brightGold border border-[#C9A24B]/30 flex items-center gap-1">
+                <i data-lucide="images" class="w-3 h-3 text-[#C9A24B]"></i> 2 Foto
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-arcane font-bold text-cosmic-brightGold text-base group-hover:text-white transition-colors">KKN Tematik Nusantara III (NTT)</h3>
+              <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2" data-i18n-card="kkn_short">Identitas visual program pengabdian dengan sentuhan motif tenun ikat daerah.</p>
+              <div class="mt-4 flex items-center justify-between text-xs text-zinc-500 border-t border-[#C9A24B]/15 pt-3">
+                <span class="text-[#8F1D33] font-arcane">Universitas Budi Luhur</span>
+                <span class="text-cosmic-brightGold flex items-center gap-1 font-semibold group-hover:translate-x-1 transition-transform">
+                  <span data-i18n="gallery.open_album">Buka Album</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 6: Visual Direction & Event -->
+          <div class="portfolio-item group cursor-pointer relative rounded-2xl overflow-hidden cosmic-card border border-[#C9A24B]/30 hover:border-[#E5C368]"
+               data-category="keyvisual"
+               data-title="Visual Direction & Event Key Visual"
+               data-title-en="Visual Direction & Event Key Visual"
+               data-year="2024 - 2025"
+               data-cat-label="Key Visual Direction"
+               data-desc="Memimpin arahan visual dari konsep awal hingga eksekusi akhir untuk agenda acara kampus. Menerjemahkan tema acara yang ekspresif ke dalam visual identity yang tegas, berani, serta konsisten di media promosi sosial dan properti acara."
+               data-desc-en="Led visual direction from concept to production for major university events. Translated raw expressive themes into bold visual identities across social media and stage production."
+               data-tools="Adobe Illustrator, Photoshop, Digital Imaging"
+               data-photos='["assets/img/page_18.jpg", "assets/img/page_19.jpg", "assets/img/page_22.jpg"]'>
+            <div class="aspect-[16/10] overflow-hidden bg-black relative">
+              <img src="assets/img/page_18.jpg" alt="Visual Direction" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+              <span class="absolute top-4 left-4 text-[10px] font-arcane font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-[#5B2A86]/85 text-[#F7F2EA] border border-[#C9A24B]/40 shadow-sm">Direction</span>
+              <span class="absolute top-4 right-4 text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-black/70 text-cosmic-brightGold border border-[#C9A24B]/30 flex items-center gap-1">
+                <i data-lucide="images" class="w-3 h-3 text-[#5B2A86]"></i> 3 Foto
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-arcane font-bold text-cosmic-brightGold text-base group-hover:text-white transition-colors">Event Visual Direction & Branding</h3>
+              <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2" data-i18n-card="event_short">Desain panggung, aset sosial media, dan identitas visual acara kampus.</p>
+              <div class="mt-4 flex items-center justify-between text-xs text-zinc-500 border-t border-[#C9A24B]/15 pt-3">
+                <span class="text-[#8E4EC6] font-arcane">Budi Luhur Event</span>
+                <span class="text-cosmic-brightGold flex items-center gap-1 font-semibold group-hover:translate-x-1 transition-transform">
+                  <span data-i18n="gallery.open_album">Buka Album</span> <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION DIVIDER 3 ================= -->
+    <div class="w-full max-w-3xl mx-auto px-6 my-4 opacity-75 pointer-events-none filter drop-shadow-[0_0_10px_rgba(201,162,75,0.4)]">
+      <img src="assets/png/cosmic-divider.png" alt="Cosmic Divider" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- ================= SKILLS SECTION ================= -->
+    <section id="skills" class="py-20 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-arcane font-bold uppercase tracking-widest text-cosmic-brightGold mb-2">
+            <span class="w-2 h-2 rounded-full bg-[#C9A24B] shadow-[0_0_6px_#C9A24B]"></span>
+            <span data-i18n="skills.badge">Disiplin & Alat Kerja</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-arcane font-bold text-white tracking-tight" data-i18n="skills.title">Keahlian & Software</h2>
+          <p class="text-zinc-400 mt-2 text-sm" data-i18n="skills.subtitle">
+            Kombinasi kemahiran software grafis standar industri dengan pemanfaatan AI untuk akselerasi visual.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="p-6 rounded-2xl cosmic-card border border-[#8F1D33]/30 group hover:border-[#E5C368]">
+            <div class="w-12 h-12 rounded-xl bg-[#23121F] flex items-center justify-center mb-5 border border-[#8F1D33]/40 p-2 filter drop-shadow-[0_0_8px_rgba(143,29,51,0.5)] group-hover:scale-105 transition-transform">
+              <img src="assets/png/pillar-sm.png" alt="Graphic Design" class="w-full h-full object-contain" />
+            </div>
+            <h3 class="text-lg font-arcane font-bold text-cosmic-brightGold mb-2" data-i18n="skills.s1_title">Graphic & Vector Design</h3>
+            <p class="text-xs text-zinc-400 mb-4 leading-relaxed" data-i18n="skills.s1_desc">Key visuals, layout vektor, logo, tipografi, dan persiapan file cetak presisi.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-cosmic-brightGold border border-[#C9A24B]/25">Adobe Illustrator</span>
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-cosmic-brightGold border border-[#C9A24B]/25">Adobe Photoshop</span>
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-cosmic-brightGold border border-[#C9A24B]/25">Key Visual</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl cosmic-card border border-[#5B2A86]/30 group hover:border-[#E5C368]">
+            <div class="w-12 h-12 rounded-xl bg-[#1E112D] flex items-center justify-center mb-5 border border-[#5B2A86]/40 p-2 filter drop-shadow-[0_0_8px_rgba(91,42,134,0.5)] group-hover:scale-105 transition-transform">
+              <img src="assets/png/skill-photo.png" alt="Photography" class="w-full h-full object-contain" />
+            </div>
+            <h3 class="text-lg font-arcane font-bold text-cosmic-brightGold mb-2" data-i18n="skills.s2_title">Fotografi & Video Editing</h3>
+            <p class="text-xs text-zinc-400 mb-4 leading-relaxed" data-i18n="skills.s2_desc">Team Leader Event Photography (Photo Rally on Transport), grading warna, dan video editing.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-[#8E4EC6] border border-purple-500/25">Event Photography</span>
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-[#8E4EC6] border border-purple-500/25">Adobe Lightroom</span>
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-[#8E4EC6] border border-purple-500/25">Video Editing</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl cosmic-card border border-[#C9A24B]/30 group hover:border-[#E5C368] sm:col-span-2 lg:col-span-1">
+            <div class="w-12 h-12 rounded-xl bg-[#291F11] flex items-center justify-center mb-5 border border-[#C9A24B]/40 p-2 filter drop-shadow-[0_0_8px_rgba(201,162,75,0.5)] group-hover:scale-105 transition-transform">
+              <img src="assets/png/pillar-ai.png" alt="AI Workflows" class="w-full h-full object-contain" />
+            </div>
+            <h3 class="text-lg font-arcane font-bold text-cosmic-brightGold mb-2" data-i18n="skills.s3_title">AI Visual Workflows</h3>
+            <p class="text-xs text-zinc-400 mb-4 leading-relaxed" data-i18n="skills.s3_desc">Penyusunan alur kerja kecerdasan buatan dari prompt menjadi visual konsisten.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-cosmic-brightGold border border-[#C9A24B]/25">Prompt Engineering</span>
+              <span class="text-xs px-2.5 py-1 rounded-md bg-[#1B1124] text-cosmic-brightGold border border-[#C9A24B]/25">Generative Image & Video</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION DIVIDER 4 ================= -->
+    <div class="w-full max-w-3xl mx-auto px-6 my-4 opacity-75 pointer-events-none filter drop-shadow-[0_0_10px_rgba(201,162,75,0.4)]">
+      <img src="assets/png/cosmic-divider.png" alt="Cosmic Divider" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- ================= EXPERIENCE & EDUCATION ================= -->
+    <section id="experience" class="py-20 px-6 bg-[#0E0916]/80">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-arcane font-bold uppercase tracking-widest text-cosmic-brightGold mb-2">
+            <span class="w-2 h-2 rounded-full bg-[#C9A24B] shadow-[0_0_6px_#C9A24B]"></span>
+            <span data-i18n="journey.badge">Kronik Perjalanan</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-arcane font-bold text-white tracking-tight" data-i18n="journey.title">Pengalaman & Studi</h2>
+          <p class="text-zinc-400 mt-2 text-sm" data-i18n="journey.subtitle">
+            Jejak nyata dalam memimpin dan berkontribusi pada event-event institusi dan universitas.
+          </p>
+        </div>
+
+        <!-- Timeline with Subtle Node Glows -->
+        <div class="relative pl-6 sm:pl-8 border-l border-[#C9A24B]/30 space-y-10">
+          
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#8F1D33] border-4 border-[#0A0710] shadow-[0_0_10px_#8F1D33] group-hover:scale-125 transition-transform"></div>
+            <div class="cosmic-card p-6 rounded-2xl border border-[#8F1D33]/30">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-base sm:text-lg font-arcane font-bold text-cosmic-brightGold" data-i18n="exp.item1_title">Leader Desain — KKN Tematik Merajut Nusantara III</h3>
+                <span class="text-xs font-arcane font-bold px-3 py-1 rounded-full bg-[#8F1D33]/20 text-[#E5C368] border border-[#8F1D33]/40">2025</span>
+              </div>
+              <div class="text-xs sm:text-sm font-medium text-[#8E4EC6] mb-2">Universitas Budi Luhur · Nusa Tenggara Timur</div>
+              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed" data-i18n="exp.item1_desc">
+                Memimpin tim desain dalam merancang seluruh identitas visual program KKN Tematik NTT, meliputi poster pendaftaran, key visual, dan perlengkapan lapangan bernuansa motif tenun ikat.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#5B2A86] border-4 border-[#0A0710] shadow-[0_0_10px_#5B2A86] group-hover:scale-125 transition-transform"></div>
+            <div class="cosmic-card p-6 rounded-2xl border border-[#5B2A86]/30">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-base sm:text-lg font-arcane font-bold text-cosmic-brightGold" data-i18n="exp.item2_title">Key Visual Tema Instagram DKV (WORK, THRIVE, FUNKY)</h3>
+                <span class="text-xs font-arcane font-bold px-3 py-1 rounded-full bg-[#5B2A86]/20 text-purple-200 border border-[#5B2A86]/40">2025</span>
+              </div>
+              <div class="text-xs sm:text-sm font-medium text-[#8E4EC6] mb-2">Universitas Budi Luhur</div>
+              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed" data-i18n="exp.item2_desc">
+                Perancang visual identity tema tahunan media sosial DKV UBL dengan eksplorasi tipografi berani dan color blocking dinamis.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#C9A24B] border-4 border-[#0A0710] shadow-[0_0_10px_#C9A24B] group-hover:scale-125 transition-transform"></div>
+            <div class="cosmic-card p-6 rounded-2xl border border-[#C9A24B]/30">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-base sm:text-lg font-arcane font-bold text-cosmic-brightGold" data-i18n="exp.item3_title">Key Visual Pameran Tugas Akhir EUFORATIVE & MORPH</h3>
+                <span class="text-xs font-arcane font-bold px-3 py-1 rounded-full bg-[#C9A24B]/20 text-cosmic-brightGold border border-[#C9A24B]/40">2024 - 2025</span>
+              </div>
+              <div class="text-xs sm:text-sm font-medium text-zinc-300 mb-2">Universitas Budi Luhur</div>
+              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed" data-i18n="exp.item3_desc">
+                Merancang materi visual pameran tugas akhir (EUFORATIVE 2024 dan Tim Desain MORPH 2025), termasuk backdrop panggung, banner, dan materi promosi digital.
+              </p>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="pt-6">
+            <div class="text-xs font-arcane font-bold uppercase tracking-widest text-cosmic-brightGold mb-6 flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-[#8F1D33]"></i>
+              <span data-i18n="journey.edu_badge">Riwayat Pendidikan</span>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="cosmic-card p-5 rounded-xl border border-[#C9A24B]/35">
+                <span class="text-xs text-[#C9A24B] font-arcane font-bold">2022 - 2026</span>
+                <h4 class="text-white font-arcane font-bold mt-1 text-base">Universitas Budi Luhur</h4>
+                <p class="text-xs text-zinc-300 mt-0.5">S1 Desain Komunikasi Visual (DKV)</p>
+                <div class="mt-3 inline-block px-2.5 py-1 rounded-md bg-[#23121F] text-[#E5C368] text-xs font-semibold border border-[#C9A24B]/30">
+                  IPK 3.65 (Fresh Graduate)
+                </div>
+                <p class="text-[11px] text-zinc-500 mt-2">Petukangan Utara, Jakarta Selatan</p>
+              </div>
+
+              <div class="cosmic-card p-5 rounded-xl border border-[#5B2A86]/35">
+                <span class="text-xs text-[#8E4EC6] font-arcane font-bold">2019 - 2022</span>
+                <h4 class="text-white font-arcane font-bold mt-1 text-base">SMK KARTIKA X-2</h4>
+                <p class="text-xs text-zinc-300 mt-0.5">Sekolah Menengah Kejuruan</p>
+                <p class="text-[11px] text-zinc-500 mt-6">Pesanggrahan, Jakarta Selatan</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION DIVIDER 5 ================= -->
+    <div class="w-full max-w-3xl mx-auto px-6 my-4 opacity-75 pointer-events-none filter drop-shadow-[0_0_10px_rgba(201,162,75,0.4)]">
+      <img src="assets/png/cosmic-divider.png" alt="Cosmic Divider" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- ================= CONTACT SECTION (COSMIC NEBULA BACKDROP) ================= -->
+    <section id="contact" class="py-24 px-6 relative overflow-hidden">
+      <!-- Cosmic Nebula Background Layer -->
+      <div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+        <img src="assets/png/nebula-bg.png" alt="Cosmic Nebula Background" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0710] via-[#0A0710]/70 to-[#0A0710]"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <div class="inline-flex items-center gap-2 text-xs font-arcane font-bold uppercase tracking-widest text-cosmic-brightGold mb-4">
+          <span class="w-2 h-2 rounded-full bg-[#C9A24B] shadow-[0_0_6px_#C9A24B]"></span>
+          <span data-i18n="contact.badge">Panggilan Kolaborasi</span>
+        </div>
+        
+        <h2 class="text-3xl sm:text-5xl font-arcane font-bold text-white tracking-tight mb-4">
+          <span data-i18n="contact.title">Mari Meramu Proyek Visual Bersama</span>
+        </h2>
+        
+        <p class="text-zinc-300 max-w-xl mx-auto mb-10 text-sm sm:text-base leading-relaxed" data-i18n="contact.subtitle">
+          Terbuka untuk kesempatan karir full-time, proyek freelance key visual, identitas acara, dan eksplorasi konten kreatif.
+        </p>
+
+        <!-- Direct Contact Action Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/6285774198245" target="_blank" class="px-7 py-3.5 rounded-full cosmic-btn-primary text-white font-arcane font-bold text-xs tracking-wider uppercase flex items-center gap-2.5">
+            <i data-lucide="message-circle" class="w-4 h-4 text-[#E5C368]"></i>
+            <span>+62 857 7419 8245</span>
+          </a>
+          <!-- Email -->
+          <a href="mailto:ziziziagal@gmail.com" class="px-7 py-3.5 rounded-full cosmic-card text-cosmic-brightGold hover:text-white border border-[#C9A24B]/35 font-arcane font-bold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 hover:scale-105">
+            <i data-lucide="mail" class="w-4 h-4 text-[#8F1D33]"></i>
+            <span>ziziziagal@gmail.com</span>
+          </a>
+        </div>
+
+        <!-- Social Media Profiles -->
+        <div class="flex items-center justify-center gap-5 text-zinc-400">
+          <a href="https://instagram.com/galang.zg" target="_blank" class="p-3.5 rounded-full cosmic-card hover:text-cosmic-brightGold border border-[#C9A24B]/25 hover:border-[#C9A24B] transition-all hover:-translate-y-1" title="Instagram: @galang.zg">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+          <a href="https://linkedin.com/in/galangmarifin" target="_blank" class="p-3.5 rounded-full cosmic-card hover:text-[#8E4EC6] border border-[#C9A24B]/25 hover:border-[#5B2A86] transition-all hover:-translate-y-1" title="LinkedIn: galangmarifin">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="https://behance.net/galangmarifin" target="_blank" class="p-3.5 rounded-full cosmic-card hover:text-cosmic-brightGold border border-[#C9A24B]/25 hover:border-[#C9A24B] transition-all hover:-translate-y-1" title="Behance: galangmarifin">
+            <i data-lucide="palette" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MULTI-PHOTO EVENT LIGHTBOX MODAL ================= -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-black/92 backdrop-blur-md">
+    <div class="relative w-full max-w-4xl cosmic-card rounded-3xl border border-[#C9A24B]/50 overflow-hidden shadow-[0_0_40px_rgba(91,42,134,0.35)] flex flex-col max-h-[94vh]">
+      
+      <!-- Top Action Bar -->
+      <div class="px-6 py-4 border-b border-[#C9A24B]/20 flex items-center justify-between bg-[#120C1E]/95">
+        <div class="flex items-center gap-3">
+          <span id="modalCatBadge" class="text-xs font-arcane font-bold px-3 py-1 rounded-full bg-[#8F1D33] text-[#F7F2EA] border border-[#C9A24B]/40 shadow-sm">Kategori</span>
+          <span id="modalCounter" class="text-xs font-arcane text-cosmic-brightGold">Foto 1 dari 3</span>
+        </div>
+        <button id="closeModalBtn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#8F1D33] text-white flex items-center justify-center transition-colors border border-[#C9A24B]/30">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Modal Body -->
+      <div class="overflow-y-auto bg-[#0A0710]">
+        <!-- Main Interactive Image Viewer with Slider Navigation -->
+        <div class="relative bg-black w-full min-h-[300px] max-h-[58vh] flex items-center justify-center overflow-hidden group">
+          <img id="modalImg" src="" alt="Detail Foto Event" class="w-full h-auto max-h-[58vh] object-contain transition-all duration-300" />
+          
+          <!-- Prev Button -->
+          <button id="prevPhotoBtn" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/80 hover:bg-[#8F1D33] text-white flex items-center justify-center border border-[#C9A24B]/40 shadow-md transition-all hover:scale-110 active:scale-95">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          </button>
+          
+          <!-- Next Button -->
+          <button id="nextPhotoBtn" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/80 hover:bg-[#8F1D33] text-white flex items-center justify-center border border-[#C9A24B]/40 shadow-md transition-all hover:scale-110 active:scale-95">
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+        <!-- Thumbnail Strip Selector -->
+        <div id="thumbStrip" class="p-3 bg-[#120C1E] border-y border-[#C9A24B]/20 flex items-center gap-2 overflow-x-auto">
+          <!-- Dynamically populated thumbnails -->
+        </div>
+        
+        <!-- Modal Project Information -->
+        <div class="p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between gap-4">
+            <h3 id="modalTitle" class="text-xl sm:text-2xl font-arcane font-bold text-cosmic-brightGold tracking-tight">Judul Event</h3>
+            <span id="modalYear" class="text-xs px-3 py-1 rounded-md bg-white/5 text-cosmic-brightGold font-arcane font-semibold border border-[#C9A24B]/35">2024</span>
+          </div>
+
+          <p id="modalDesc" class="text-zinc-300 text-sm leading-relaxed">Deskripsi lengkap dari konsep proyek ini.</p>
+          
+          <div class="pt-4 border-t border-[#C9A24B]/20 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-400">
+            <div>
+              <span class="block text-cosmic-brightGold font-arcane font-bold uppercase mb-1" data-i18n="modal.tools_label">Software & Perangkat</span>
+              <span id="modalTools" class="text-zinc-200 font-medium">Adobe Illustrator, Photoshop</span>
+            </div>
+            
+            <a href="https://wa.me/6285774198245" target="_blank" class="px-5 py-2.5 rounded-full cosmic-btn-primary text-white font-arcane font-bold transition-all hover:scale-105 flex items-center gap-1.5 shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4 text-[#E5C368]"></i>
+              <span data-i18n="modal.cta_inquire">Tanya Detail Desain Ini</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 px-6 border-t border-[#C9A24B]/20 text-center text-xs text-zinc-500 bg-[#07050C]">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-arcane">
+      <p>© 2026 Galang Muhamad Arifin. <span data-i18n="footer.rights">Seluruh hak cipta dilindungi.</span></p>
+      <p class="flex items-center gap-2 text-cosmic-brightGold">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span>
+        <span>Visual Direction · Universitas Budi Luhur</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= BILINGUAL DICTIONARY & SCRIPTS ================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // ----------------------------------------------------------------
+    // BILINGUAL TRANSLATION DICTIONARY (ID & EN)
+    // ----------------------------------------------------------------
+    const translations = {
+      id: {
+        "nav.role": "Visual Direction & Design",
+        "nav.about": "Tentang Saya",
+        "nav.works": "Karya & Event",
+        "nav.skills": "Kemampuan",
+        "nav.journey": "Jejak Karir",
+        "nav.contact": "Kontak",
+        "nav.cta": "Hubungi",
+        
+        "hero.tagline_top": "✦ ARSIP VISUAL // ARAH KOMPAS KOSMIK ✦",
+        "hero.desc": "Lulusan Desain Komunikasi Visual Universitas Budi Luhur (IPK 3.65) dengan pengalaman 2,5 tahun di Laboratorium DKV. Menggabungkan seni grafis presisi, key visual berskala besar, serta alur kerja AI visual generatif.",
+        "hero.cta_explore": "Buka Arsip Karya",
+        "stats.gpa": "IPK Kelulusan DKV",
+        "stats.lab": "Tahun Lab DKV",
+        "stats.events": "Event Besar",
+
+        "about.badge": "Tentang Sang Desainer",
+        "about.profile_title": "Visual Direction & AI Content Specialist",
+        "about.quote": "Meramu ide mentah menjadi mahakarya visual yang memikat & bermakna.",
+        "about.bio_p1": "Saya adalah lulusan baru (Fresh Graduate) S1 Desain Komunikasi Visual dari Universitas Budi Luhur dengan IPK 3.65. Selama 2,5 tahun di Laboratorium DKV kampus, saya mengarahkan perancangan key visual acara, flyer, backdrop panggung, hingga materi pameran skala besar.",
+        "about.bio_p2": "Menguasai Adobe Photoshop & Illustrator dengan tambahan keahlian fotografi acara dan video editing, serta aktif merancang alur kerja AI Workflows untuk mentransformasikan prompt menjadi aset visual yang konsisten dan siap pakai.",
+        "about.pillar_kv": "Backdrop pameran, identitas event, & instalasi panggung.",
+        "about.pillar_sm": "Grid sistematis, carousel feed, & template Instagram.",
+        "about.pillar_ai": "Konsistensi visual generatif & efisiensi produksi.",
+
+        "gallery.badge": "Arsip Karya Pilihan",
+        "gallery.title": "Galeri Event & Karya",
+        "gallery.subtitle": "Setiap event dapat memuat banyak foto. Klik kartu event untuk membuka album foto lengkap dan detail konsepnya.",
+        "gallery.open_album": "Buka Album",
+
+        "filter.all": "Semua",
+        "filter.keyvisual": "Key Visual & Event",
+        "filter.socialmedia": "Social Media & Feed",
+        "filter.campaign": "Kampanye & Brand",
+
+        "skills.badge": "Disiplin & Alat Kerja",
+        "skills.title": "Keahlian & Software",
+        "skills.subtitle": "Kombinasi kemahiran software grafis standar industri dengan pemanfaatan AI untuk akselerasi visual.",
+        "skills.s1_title": "Graphic & Vector Design",
+        "skills.s1_desc": "Key visuals, layout vektor, logo, tipografi, dan persiapan file cetak presisi.",
+        "skills.s2_title": "Fotografi & Video Editing",
+        "skills.s2_desc": "Team Leader Event Photography (Photo Rally on Transport), grading warna, dan video editing.",
+        "skills.s3_title": "AI Visual Workflows",
+        "skills.s3_desc": "Penyusunan alur kerja kecerdasan buatan dari prompt menjadi visual konsisten.",
+
+        "journey.badge": "Kronik Perjalanan",
+        "journey.title": "Pengalaman & Studi",
+        "journey.subtitle": "Jejak nyata dalam memimpin dan berkontribusi pada event-event institusi dan universitas.",
+        "journey.edu_badge": "Riwayat Pendidikan",
+
+        "exp.item1_title": "Leader Desain — KKN Tematik Merajut Nusantara III",
+        "exp.item1_desc": "Memimpin tim desain dalam merancang seluruh identitas visual program KKN Tematik NTT, meliputi poster pendaftaran, key visual, dan perlengkapan lapangan bernuansa motif tenun ikat.",
+        "exp.item2_title": "Key Visual Tema Instagram DKV (WORK, THRIVE, FUNKY)",
+        "exp.item2_desc": "Perancang visual identity tema tahunan media sosial DKV UBL dengan eksplorasi tipografi berani dan color blocking dinamis.",
+        "exp.item3_title": "Key Visual Pameran Tugas Akhir EUFORATIVE & MORPH",
+        "exp.item3_desc": "Merancang materi visual pameran tugas akhir (EUFORATIVE 2024 dan Tim Desain MORPH 2025), termasuk backdrop panggung, banner, dan materi promosi digital.",
+
+        "contact.badge": "Sinyal Kolaborasi",
+        "contact.title": "Mari Memulai Ekspedisi Visual Bersama",
+        "contact.subtitle": "Terbuka untuk kesempatan karir full-time, proyek freelance key visual, identitas acara, dan eksplorasi konten kreatif.",
+
+        "modal.tools_label": "Software & Perangkat",
+        "modal.cta_inquire": "Tanya Detail Desain Ini",
+        "footer.rights": "Seluruh hak cipta dilindungi."
+      },
+      en: {
+        "nav.role": "Visual Direction & Design",
+        "nav.about": "About Me",
+        "nav.works": "Works & Events",
+        "nav.skills": "Skills",
+        "nav.journey": "Journey",
+        "nav.contact": "Contact",
+        "nav.cta": "Inquire",
+        
+        "hero.tagline_top": "✦ CELESTIAL VISUAL ARCHIVE // GALAXY ASTROLABE ✦",
+        "hero.desc": "Visual Communication Design graduate from Universitas Budi Luhur (GPA 3.65) with 2.5 years of experience at the campus DKV Lab. Combining precision graphic craftsmanship, large-scale key visuals, and generative AI visual workflows.",
+        "hero.cta_explore": "Explore Works Archive",
+        "stats.gpa": "DKV Graduation GPA",
+        "stats.lab": "Years in DKV Lab",
+        "stats.events": "Major Events",
+
+        "about.badge": "About The Designer",
+        "about.profile_title": "Visual Direction & AI Content Specialist",
+        "about.quote": "Conjuring raw concepts into impactful, timeless visual experiences.",
+        "about.bio_p1": "I am a fresh graduate in Visual Communication Design from Universitas Budi Luhur with a 3.65 GPA. Over 2.5 years in the campus DKV Laboratory, I led and executed key visuals, flyers, stage backdrops, and large-scale exhibition assets.",
+        "about.bio_p2": "Proficient in Adobe Photoshop & Illustrator, complemented by event photography and video editing, and actively developing AI Workflows to turn prompts into consistent, production-ready visual assets.",
+        "about.pillar_kv": "Exhibition backdrops, event identity, & stage installations.",
+        "about.pillar_sm": "Systematic grids, carousel feeds, & Instagram templates.",
+        "about.pillar_ai": "Generative consistency & production acceleration.",
+
+        "gallery.badge": "Featured Archives",
+        "gallery.title": "Events & Works Gallery",
+        "gallery.subtitle": "Each event houses multiple photos. Click any event card to view the full photo album and conceptual breakdown.",
+        "gallery.open_album": "Open Album",
+
+        "filter.all": "All",
+        "filter.keyvisual": "Key Visual & Events",
+        "filter.socialmedia": "Social Media & Feeds",
+        "filter.campaign": "Campaigns & Brands",
+
+        "skills.badge": "Disciplines & Tools",
+        "skills.title": "Skills & Software",
+        "skills.subtitle": "Combining industry-standard design suites with cutting-edge AI pipelines for accelerated visual execution.",
+        "skills.s1_title": "Graphic & Vector Design",
+        "skills.s1_desc": "Key visuals, vector layout, branding, typography, and precision print-ready preparation.",
+        "skills.s2_title": "Photography & Video Editing",
+        "skills.s2_desc": "Team Leader Event Photography (Photo Rally on Transport), color grading, and video editing.",
+        "skills.s3_title": "AI Visual Workflows",
+        "skills.s3_desc": "Orchestrating generative AI pipelines from prompts to consistent visual narratives.",
+
+        "journey.badge": "Chronicles",
+        "journey.title": "Experience & Education",
+        "journey.subtitle": "Real-world track record leading and contributing to prominent university events.",
+        "journey.edu_badge": "Education History",
+
+        "exp.item1_title": "Design Leader — NTT Thematic Community Development",
+        "exp.item1_desc": "Led the design team in creating the entire visual identity for the NTT community program, including registration posters, key visual, and field equipment inspired by traditional ikat weave motifs.",
+        "exp.item2_title": "DKV Instagram Annual Theme (WORK, THRIVE, FUNKY)",
+        "exp.item2_desc": "Designed the annual social media visual identity for DKV UBL featuring bold typography and vibrant color blocking.",
+        "exp.item3_title": "EUFORATIVE & MORPH Final Project Exhibition Key Visual",
+        "exp.item3_desc": "Created visual materials for the final project exhibitions (EUFORATIVE 2024 and MORPH 2025 design team), including stage backdrops, banners, and digital promos.",
+
+        "contact.badge": "Collaboration Signal",
+        "contact.title": "Let's Launch a Visual Journey Together",
+        "contact.subtitle": "Open for full-time career roles, freelance key visuals, event identity commissions, and creative AI exploration.",
+
+        "modal.tools_label": "Software & Tools",
+        "modal.cta_inquire": "Inquire About This Design",
+        "footer.rights": "All rights reserved."
+      }
+    };
+
+    let currentLang = 'id';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const dict = translations[lang];
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.textContent = dict[key];
+        }
+      });
+
+      const idBtn = document.getElementById('langIdBtn');
+      const enBtn = document.getElementById('langEnBtn');
+      if (lang === 'id') {
+        idBtn.className = 'px-3 py-1 rounded-full font-bold transition-all text-[#E5C368] bg-[#C9A24B]/20 border border-[#C9A24B]/40 shadow-[0_0_8px_rgba(201,162,75,0.3)]';
+        enBtn.className = 'px-3 py-1 rounded-full font-medium transition-all text-zinc-400 hover:text-white';
+      } else {
+        enBtn.className = 'px-3 py-1 rounded-full font-bold transition-all text-[#E5C368] bg-[#C9A24B]/20 border border-[#C9A24B]/40 shadow-[0_0_8px_rgba(201,162,75,0.3)]';
+        idBtn.className = 'px-3 py-1 rounded-full font-medium transition-all text-zinc-400 hover:text-white';
+      }
+
+      if (!modal.classList.contains('hidden') && currentActiveItem) {
+        updateModalContent(currentActiveItem);
+      }
+    }
+
+    // Mobile Navbar Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Gallery Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('cosmic-btn-primary', 'text-white', 'font-bold', 'active');
+          b.classList.add('text-zinc-400');
+        });
+        btn.classList.add('cosmic-btn-primary', 'text-white', 'font-bold', 'active');
+        btn.classList.remove('text-zinc-400');
+
+        const filter = btn.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            }, 30);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 180);
+          }
+        });
+      });
+    });
+
+    // MULTI-PHOTO MODAL SLIDER
+    const modal = document.getElementById('projectModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalTools = document.getElementById('modalTools');
+    const modalCatBadge = document.getElementById('modalCatBadge');
+    const modalYear = document.getElementById('modalYear');
+    const modalCounter = document.getElementById('modalCounter');
+    const thumbStrip = document.getElementById('thumbStrip');
+    const prevBtn = document.getElementById('prevPhotoBtn');
+    const nextBtn = document.getElementById('nextPhotoBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    let currentPhotoList = [];
+    let currentPhotoIndex = 0;
+    let currentActiveItem = null;
+
+    function renderCurrentPhoto() {
+      if (!currentPhotoList || currentPhotoList.length === 0) return;
+      modalImg.src = currentPhotoList[currentPhotoIndex];
+      modalCounter.textContent = currentLang === 'id' 
+        ? `Foto ${currentPhotoIndex + 1} dari ${currentPhotoList.length}`
+        : `Photo ${currentPhotoIndex + 1} of ${currentPhotoList.length}`;
+      
+      const thumbs = thumbStrip.querySelectorAll('img');
+      thumbs.forEach((t, idx) => {
+        if (idx === currentPhotoIndex) {
+          t.className = 'w-16 h-12 rounded-lg object-cover border-2 border-[#E5C368] opacity-100 cursor-pointer shadow-[0_0_10px_rgba(201,162,75,0.6)] transition-all scale-105';
+        } else {
+          t.className = 'w-16 h-12 rounded-lg object-cover border border-[#C9A24B]/30 opacity-40 hover:opacity-80 cursor-pointer transition-all';
+        }
+      });
+
+      if (currentPhotoList.length <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        thumbStrip.style.display = 'none';
+      } else {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+        thumbStrip.style.display = 'flex';
+      }
+    }
+
+    function updateModalContent(item) {
+      const isEn = (currentLang === 'en');
+      modalTitle.textContent = (isEn && item.getAttribute('data-title-en')) 
+        ? item.getAttribute('data-title-en') 
+        : item.getAttribute('data-title');
+
+      modalDesc.textContent = (isEn && item.getAttribute('data-desc-en')) 
+        ? item.getAttribute('data-desc-en') 
+        : item.getAttribute('data-desc');
+
+      modalTools.textContent = item.getAttribute('data-tools');
+      modalCatBadge.textContent = item.getAttribute('data-cat-label');
+      modalYear.textContent = item.getAttribute('data-year');
+    }
+
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', () => {
+        currentActiveItem = item;
+        updateModalContent(item);
+
+        const photosJson = item.getAttribute('data-photos');
+        try {
+          currentPhotoList = JSON.parse(photosJson);
+        } catch(e) {
+          currentPhotoList = [item.getAttribute('data-img') || ''];
+        }
+
+        currentPhotoIndex = 0;
+        thumbStrip.innerHTML = '';
+        currentPhotoList.forEach((src, idx) => {
+          const thumb = document.createElement('img');
+          thumb.src = src;
+          thumb.alt = `Thumb ${idx+1}`;
+          thumb.addEventListener('click', () => {
+            currentPhotoIndex = idx;
+            renderCurrentPhoto();
+          });
+          thumbStrip.appendChild(thumb);
+        });
+
+        renderCurrentPhoto();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentPhotoList.length > 0) {
+        currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotoList.length) % currentPhotoList.length;
+        renderCurrentPhoto();
+      }
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentPhotoList.length > 0) {
+        currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotoList.length;
+        renderCurrentPhoto();
+      }
+    });
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
