@@ -6,7 +6,7 @@ echo   MENGUNGGAH PORTOFOLIO KE GITHUB (Galang Muhamad Arifin)
 echo ===================================================================
 echo.
 echo Sedang mengirim file proyek (37 MB) ke GitHub repository:
-echo https://github.com/ziziziagal9/Galang_Muhamad_Arifin-Portfolio
+echo https://github.com/GalangMuhamadArifin/Galang_Muhamad_Arifin-Portfolio
 echo.
 cd /d "%~dp0"
 git push -u origin main --force
