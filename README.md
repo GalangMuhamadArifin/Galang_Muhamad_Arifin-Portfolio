@@ -1,36 +1,39 @@
-# 🔮 Portofolio Galang Muhamad Arifin — Visual Sorcery & Alchemy
+# ⚡ Galang Muhamad Arifin — Visual Direction & Graphic Design Portfolio
 
-Website portofolio berkonsep **Arcane / Grimoire Wizard Fantasy** dengan perpaduan warna **Merah, Hitam, Ungu, dan Emas**, yang tetap dirancang secara bersih, modern, dan profesional.
+Website portofolio profesional berstandar **Creative Director / Design Studio** dengan pendekatan desain bersih (*clean architectural grid*), tipografi modern (*Space Grotesk* & *Plus Jakarta Sans*), aksen emas mewah (*Champagne Gold*), dan sistem dark mode obsidian.
 
----
-
-## 🎨 Tema & Estetika Visual
-
-1. **Palet Warna Utama**:
-   - **Hitam Obsidian (`#06050a`)**: Latar belakang gelap berkedalaman tinggi.
-   - **Ungu Arcane (`#7c3aed`, `#8b5cf6`)**: Aura magis dan bayangan mistis.
-   - **Merah Crimson (`#dc2626`, `#991b1b`)**: Nyala api dan aksen keberanian visual.
-   - **Emas Bercahaya (`#fbbf24`, `#fef08a`)**: Tipografi utama, bingkai kartu kuno (*gold filigree*), dan kilau bintang.
-
-2. **Halaman Depan (Hero Section)**:
-   - Judul megah terpusat: **`PORTFOLIO`** berbalut gradasi emas berkilau.
-   - Ornamen magis:
-     - Siluet penyihir terbang di atas sapu (*witch on broomstick*).
-     - Burung merpati bercahaya (*celestial doves*).
-     - Kartu arcana / tarot melayang.
-     - **Grimoire / Kitab Sihir Terbuka** yang memancarkan pendaran cahaya bintang di tengah.
-     - Siluet pepohonan magis di sisi kiri & kanan layar (terinspirasi dari referensi *Trono de Vidro*).
-
-3. **Fitur Dwibahasa (Bilingual ID 🇮🇩 / EN 🇬🇧)**:
-   - Terdapat tombol pengubah bahasa di pojok kanan atas navbar.
-   - Mendukung peralihan instan antara **Bahasa Indonesia** dan **Bahasa Inggris** tanpa reload halaman.
-
-4. **Multi-Photo Event Showcase**:
-   - Klik kartu event manapun (misal **EUFORATIVE** atau **WORK, THRIVE, FUNKY**) untuk membuka pop-up album foto dengan tombol *Prev / Next* dan *Thumbnail Strip*.
+🌐 **Live Website**: [https://galangmuhamadarifin.github.io/Galang_Muhamad_Arifin-Portfolio/](https://galangmuhamadarifin.github.io/Galang_Muhamad_Arifin-Portfolio/)
 
 ---
 
-## 📂 Cara Menjalankan
+## 🎨 Karakteristik Desain Profesional
 
-Cukup buka file `index.html` langsung di browser Anda (Google Chrome, Microsoft Edge, dll.) yang terletak di:
-`C:\Users\Admin\.gemini\antigravity\scratch\portfolio-kreatif\index.html`
+1. **Palet Warna & Material**:
+   - **Deep Obsidian & Carbon (`#0B0C10`, `#111217`)**: Latar belakang elegan dengan ambient lighting halus.
+   - **Champagne Gold (`#E5C368`, `#C9A24B`)**: Aksen premium untuk tipografi utama, status badge, dan tombol CTA.
+   - **Titanium Borders (`rgba(255, 255, 255, 0.08)`)**: Garis tepi presisi dengan efek glassmorphism modern.
+
+2. **Tipografi & Hirarki**:
+   - **Headings**: *Space Grotesk* (tegas, modern, dan berkarakter desain studio).
+   - **Body & Editorial**: *Plus Jakarta Sans* (keterbacaan optimal dan bersih).
+   - **Meta & Chips**: *Space Mono* (akurat untuk status, kode, dan data tahun).
+
+3. **Fitur Utama**:
+   - **Fitur Dwibahasa (Bilingual ID 🇮🇩 / EN 🇬🇧)**: Default Bahasa Inggris dengan tombol switch instan ke Bahasa Indonesia.
+   - **Multi-Photo Event Showcase Lightbox**: Pop-up album foto interaktif dengan slider chevron, keyboard arrows (`←` / `→` / `Esc`), dan thumbnail preview strip.
+   - **Filter Kategori Cepat**: Menampilkan kategori `All`, `Key Visual`, dan `Fotografi`.
+   - **Bento Grid Profil & Rekam Jejak**: Ringkasan pencapaian IPK 3.65, pengalaman 2.5+ tahun Lab DKV, dan 10+ event besar.
+   - **Kontak & Media Sosial Terkurasi**: Tautan langsung WhatsApp, Email, Instagram, dan TikTok.
+
+---
+
+## 🚀 1-Click Upload ke GitHub
+
+Cukup klik 2x file:
+`upload-ke-github.bat`
+
+Script ini akan secara otomatis:
+1. Menyimpan dan mengemas perubahan terbaru (`git add .`)
+2. Membuat pesan commit resmi
+3. Mengunggah ke repository GitHub `origin main`
+4. Menampilkan link website live setelah selesai
